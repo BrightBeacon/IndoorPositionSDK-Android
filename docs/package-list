@@ -1,0 +1,6 @@
+com.brtbeacon.locationengine.ble
+com.brtbeacon.map.map3d
+com.brtbeacon.map.map3d.entity
+com.brtbeacon.map.map3d.route
+com.brtbeacon.map.map3d.utils
+com.brtbeacon.mapdata

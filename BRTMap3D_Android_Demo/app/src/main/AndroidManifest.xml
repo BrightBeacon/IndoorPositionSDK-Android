@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.brtbeacon.map3d.demo">
+
+    <!-- 用于在线校验智石地图SDK开发密钥, 获取在线地图数据和在线路径规划数据 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 用于室内地图相关数据的保存和加载 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 提示：以下权限可选，需要室内定位功能请添加声明 -->
+
+    <!-- 蓝牙扫描权限,用于扫描蓝牙Beacon定位信标. -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- 安卓6.0及以后系统需要声明以下权限，才能扫描到蓝牙Beacon信标 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- 如果APP编译targetSdk>=31(即安卓12及以上版本),需声明以下权限 -->
+    <!-- 蓝牙扫描权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <!-- 蓝牙连接权限，控制蓝牙开关 (该权限可选，方便用户开启蓝牙功能) -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".map.MapGuideActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 地图显示功能演示 -->
+        <activity android:name=".map.basic.SimpleMapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".map.basic.FloorMapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".map.basic.CoordMapActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- 控件 -->
+        <activity android:name=".map.control.ZoomMapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".map.control.IconScaleMapActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 覆盖物 -->
+        <activity android:name=".map.annotations.MarkerMapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".map.annotations.PolyLineMapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".map.annotations.PolygonMapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".map.annotations.PolygonComplexMapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".map.annotations.LabelMapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".map.annotations.ImageMapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".map.annotations.InfoWindowMapActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- 查询 -->
+        <activity android:name=".map.search.SimpleSearchMapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".map.search.NoneMapSearchActivity"
+            android:screenOrientation="portrait"/>
+
+
+        <!-- 事件 -->
+        <activity android:name=".map.event.EventLoadMapActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".map.event.EventFloorMapActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".map.event.EventClickMapActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".map.event.EventMapActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".map.event.FollowMapActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- 地图操作 -->
+        <activity android:name=".map.oper.PoiMapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".map.oper.PoiMapDiffColorActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- 室内定位 -->
+        <activity android:name=".map.location.LocationActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- 路径规划 -->
+        <activity android:name=".map.route.RouteOfflineActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".map.route.RouteOnlineActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".map.route.RouteSimNavActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".map.route.RouteSimLocationNavActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".map.route.MultiRouteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".map.route.MultiRouteNavActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".map.route.NearestRoutePointOfflineActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 其它 -->
+        <activity android:name=".map.others.HeatMapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".map.others.SwitchMapActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- ISSUES -->
+        <activity
+            android:name=".map.test.MarkerMapActivity"
+            android:screenOrientation="portrait" />
+
+
+        <!-- 定位需此服务进行蓝牙扫描 -->
+        <service android:name="com.brtbeacon.locationengine.ibeacon.BeaconService" />
+    </application>
+
+</manifest>
