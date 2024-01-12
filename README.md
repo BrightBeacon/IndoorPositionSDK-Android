@@ -221,7 +221,5 @@ SDK如何处理个人信息请参见隐私政策：[隐私政策](https://files.
 ##### 智石科技
 
 * [智石官网](http://www.brtbeacon.com)
-* [帮助文档](http://help.brtbeacon.com)
-* [社区提问](http://bbs.brtbeacon.com)
 
 ##### 商务合作、地图绘制咨询[4000-999-023](tel:4000999023)
